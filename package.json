@@ -1,0 +1,15 @@
+{
+  "name": "trade-website-template",
+  "private": true,
+  "scripts": {
+    "generate:site": "node scripts/generate-site-files.js",
+    "pretest": "npm run generate:site",
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.2",
+    "@playwright/test": "^1.55.0"
+  }
+}
