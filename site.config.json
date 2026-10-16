@@ -1,213 +1,208 @@
 {
-  "siteUrl": "https://apexplumbingheating.co.uk",
+  "siteUrl": "https://earlsfield-electricians.example",
   "business": {
-    "name": "Apex Plumbing & Heating",
-    "brandName": "APEX",
-    "brandTagline": "PLUMBING & HEATING",
-    "brandInitial": "A",
-    "phone": "+442079460958",
-    "phoneDisplay": "020 7946 0958",
-    "email": "info@apexplumbingheating.co.uk",
-    "streetAddress": "123 High Street",
+    "name": "Earlsfield Electricians",
+    "brandName": "EARLSFIELD",
+    "brandTagline": "ELECTRICIANS",
+    "brandInitial": "E",
+    "phone": "+442079460001",
+    "phoneDisplay": "020 7946 0001",
+    "email": "hello@earlsfield-electricians.example",
+    "streetAddress": "Earlsfield",
     "locality": "London",
-    "postcode": "SW9 8XY",
+    "postcode": "SW18",
     "country": "GB",
     "areaServed": [
-      "Lambeth",
-      "Southwark",
+      "Earlsfield",
+      "Southfields",
       "Wandsworth",
-      "Croydon",
-      "Bromley"
+      "Tooting",
+      "Wimbledon"
     ],
-    "mapQuery": "South London, UK",
-    "facebookUrl": "https://www.facebook.com/",
-    "instagramUrl": "https://www.instagram.com/"
+    "mapQuery": "Earlsfield, London SW18"
   },
   "seo": {
-    "title": "24/7 Emergency Plumbers South London | Apex Plumbing & Heating",
-    "description": "24/7 emergency plumbing and heating repairs across South London. Gas Safe registered engineers, clear pricing and no call-out fees.",
-    "notFoundTitle": "Page not found | Apex Plumbing & Heating",
-    "notFoundDescription": "The page you requested could not be found. Contact Apex Plumbing & Heating for help."
+    "title": "Earlsfield Electricians | Electrical Services in SW18",
+    "description": "Electrical repairs, lighting, rewiring and inspections for homes and businesses in Earlsfield and nearby areas.",
+    "notFoundTitle": "Page not found | Earlsfield Electricians",
+    "notFoundDescription": "The page you requested could not be found. Contact Earlsfield Electricians for help."
   },
   "privacy": {
-    "title": "Privacy Policy | Apex Plumbing & Heating",
-    "description": "How Apex Plumbing & Heating collects and uses personal information submitted through its website.",
+    "title": "Privacy Policy | Earlsfield Electricians",
+    "description": "How Earlsfield Electricians handles personal information submitted through this website.",
     "heading": "Privacy policy",
     "lastUpdated": "Review before publication",
     "intro": "This privacy policy explains how we handle personal information submitted through this website.",
     "informationCollected": "If you submit an enquiry, we collect your name, phone number, selected service and any details you include in your message.",
     "purpose": "We use this information to respond to your enquiry, discuss requested work and keep a record of our communications.",
     "lawfulBasis": "We process enquiry details to take steps you request before entering into a contract. Where we retain enquiry records or handle related follow-up, confirm and document the appropriate lawful basis before publication.",
-    "sharing": "Quote form submissions are sent through Formspree. Confirm the provider's role, terms and current privacy information, and list any other recipients who may handle enquiries.",
+    "sharing": "This demonstration quote form is not connected to an inbox or form provider. Do not submit personal information until a service has been configured and this policy updated.",
     "internationalTransfers": "Before publication, confirm whether the form provider or other recipients transfer information outside the UK and describe the applicable safeguards, if relevant.",
     "retention": "Set the enquiry retention period and deletion process before publication; do not keep personal information for longer than necessary.",
     "security": "We take appropriate steps to protect enquiry information. Confirm the practical safeguards used by the business and its service providers before publication.",
     "rights": "Depending on the circumstances, you may have rights to access, correct or erase your personal information, restrict or object to processing, and request data portability. You may also complain to the Information Commissioner's Office.",
-    "cookies": "This template does not intentionally set analytics cookies. Review embedded maps, external fonts, images and other third-party services and update this section to describe any data or cookies they use.",
+    "cookies": "This template does not intentionally set analytics cookies. Review embedded maps, images and other third-party services and update this section to describe any data or cookies they use.",
     "complaints": "You can raise a concern with the UK Information Commissioner's Office. We encourage you to contact us first so we can try to resolve it."
   },
   "theme": {
     "colorScheme": "light",
     "colors": {
-      "ink": "#1c302d",
-      "muted": "#59665f",
-      "green": "#173b35",
-      "green-deep": "#102d29",
-      "green-soft": "#e8eeea",
-      "lime": "#d4ed73",
-      "paper": "#f6f7f2",
+      "ink": "#26323d",
+      "muted": "#5c6670",
+      "green": "#1557a0",
+      "green-deep": "#12395f",
+      "green-soft": "#e9f0f8",
+      "lime": "#f4b544",
+      "paper": "#f7f8fa",
       "white": "#fff",
-      "line": "#dfe4dd"
+      "line": "#dce2e8"
     }
   },
   "notice": {
-    "text": "Emergency help, day or night · South London callouts",
-    "linkText": "Speak to an engineer"
+    "text": "Local electrical help for Earlsfield and nearby",
+    "linkText": "Call the team"
   },
   "hero": {
-    "eyebrow": "South London's local plumbing team",
-    "title": "When water won't wait, <em>we're already on our way.</em>",
-    "lede": "Fast, reliable plumbing and heating repairs from fully qualified, Gas Safe registered engineers. No call-out fees. No hidden costs.",
-    "primaryButton": "Call our team",
+    "eyebrow": "Electrical services in Earlsfield, SW18",
+    "title": "Electrical work, <em>done with care.</em>",
+    "lede": "From lighting and repairs to rewiring and inspections, get practical electrical help for your home or business.",
+    "primaryButton": "Call 020 7946 0001",
     "secondaryButton": "Request a free quote",
-    "proofTitle": "Trusted across South London",
-    "proofBody": "Friendly help, straightforward pricing",
-    "imageNoteTitle": "Here when you need us",
-    "imageNoteBody": "Emergency callouts, 24/7",
-    "imageBadge": "24/7"
+    "proofTitle": "Serving Earlsfield and nearby",
+    "proofBody": "Helpful advice and clear next steps",
+    "imageNoteTitle": "Electrical work for your property",
+    "imageNoteBody": "Repairs, upgrades and installations",
+    "imageBadge": "EE"
   },
   "trustStrip": [
-    "Gas Safe registered",
-    "Fully insured",
-    "No call-out fees",
-    "15+ years' experience"
+    "Domestic and commercial",
+    "Clear recommendations",
+    "Repairs and upgrades",
+    "Earlsfield and nearby"
   ],
   "servicesSection": {
-    "eyebrow": "What we can help with",
-    "heading": "Good hands for<br><em>the whole home.</em>",
-    "intro": "From a dripping tap to a heating system that needs a fresh start, our qualified team gets to the root of it."
+    "eyebrow": "Electrical services",
+    "heading": "Help with the jobs<br><em>that keep you powered.</em>",
+    "intro": "From a faulty socket to a planned upgrade, find straightforward electrical support for your property."
   },
   "services": [
     {
-      "title": "Emergency plumbing",
-      "description": "Burst pipes, leaks and blockages fixed fast, day or night."
+      "title": "Electrical repairs",
+      "description": "Help diagnosing and resolving common electrical faults."
     },
     {
-      "title": "Boilers",
-      "description": "Servicing, repairs and full boiler replacements from trusted brands."
+      "title": "Lighting",
+      "description": "New light fittings, replacements and indoor or outdoor lighting."
     },
     {
-      "title": "Central heating",
-      "description": "Radiator installs, power flushing and system upgrades."
+      "title": "Rewiring",
+      "description": "Partial and full rewiring for renovations and property upgrades."
     },
     {
-      "title": "Bathroom plumbing",
-      "description": "Toilets, taps, showers and complete bathroom fit-outs."
+      "title": "Fuse boards",
+      "description": "Consumer unit replacements and electrical system upgrades."
     },
     {
-      "title": "Drain clearance",
-      "description": "Hassle-free unblocking for sinks, toilets and outdoor drains."
+      "title": "Electrical inspections",
+      "description": "Inspection and testing to help you understand your installation."
     },
     {
-      "title": "Home maintenance",
-      "description": "Routine checks and small repairs to keep things running smoothly."
+      "title": "Sockets and switches",
+      "description": "New sockets, switches and other small electrical installations."
     }
   ],
   "about": {
-    "eyebrow": "A little about Apex",
-    "heading": "Respect for your home.<br><em>Care in every detail.</em>",
-    "intro": "With over 15 years of experience, Apex Plumbing & Heating has been keeping South London homes running smoothly. We're fully insured, Gas Safe registered, and pride ourselves on honest pricing and tidy work.",
-    "supporting": "No job too big or too small. We treat every home like it's our own.",
-    "cta": "Tell us what you need",
-    "tagline": "BUILT ON TRUST, NOT SHORTCUTS.",
-    "experienceYears": "15",
-    "experienceLabel": "YEARS\nON THE TOOLS",
-    "experienceSuffix": "+"
+    "eyebrow": "Your local electrical team",
+    "heading": "Local electrical help.<br><em>Careful work.</em>",
+    "intro": "Earlsfield Electricians is a local electrical service for homes and small businesses. Tell us what needs doing and we’ll talk you through the next steps.",
+    "supporting": "We work across Earlsfield and neighbouring parts of south-west London.",
+    "cta": "Ask about your job",
+    "tagline": "LOCAL ELECTRICAL SERVICES."
   },
   "area": {
     "eyebrow": "Close by, ready to help",
-    "heading": "South London<br><em>is our home turf.</em>",
-    "description": "Proudly serving Lambeth, Southwark, Wandsworth, Croydon, Bromley and the surrounding area. Not sure if we cover you? Give us a call. We're often happy to travel further for bigger jobs.",
+    "heading": "Based in Earlsfield.<br><em>Working nearby.</em>",
+    "description": "We cover Earlsfield, Southfields, Wandsworth, Tooting, Wimbledon and nearby neighbourhoods. Get in touch to check whether we can help at your address.",
     "list": [
-      "Lambeth",
-      "Southwark",
+      "Earlsfield",
+      "Southfields",
       "Wandsworth",
-      "Croydon",
-      "Bromley",
-      "And nearby"
+      "Tooting",
+      "Wimbledon",
+      "Nearby areas"
     ],
-    "cta": "Check your postcode",
-    "mapTag": "LOCAL TEAM, LOCAL KNOW-HOW"
+    "cta": "Ask about your area",
+    "mapTag": "EARLSFIELD AND NEARBY"
   },
   "work": {
-    "eyebrow": "A few jobs, done right",
-    "heading": "The work speaks<br><em>for itself.</em>",
-    "intro": "Careful repairs and installations, with your home left as tidy as we found it.",
+    "eyebrow": "Electrical work",
+    "heading": "Practical upgrades<br><em>for everyday spaces.</em>",
+    "intro": "A look at the installations and improvements our team can help with.",
     "items": [
-      { "category": "HEATING", "title": "The details matter" },
-      { "category": "BATHROOMS", "title": "Made to feel right" },
-      { "category": "INSTALLATIONS", "title": "Ready for everyday" }
+      { "category": "LIGHTING", "title": "Light where you need it" },
+      { "category": "REWIRING", "title": "Plan for an upgrade" },
+      { "category": "INSTALLATIONS", "title": "Everyday electrical work" }
     ]
   },
   "reviews": {
-    "eyebrow": "Kind words from the neighbourhood",
-    "heading": "Good people.<br><em>Good work.</em>",
+    "eyebrow": "Local feedback",
+    "heading": "A few words<br><em>from customers.</em>",
     "rating": "5.0",
-    "ratingLabel": "From our South London customers",
+    "ratingLabel": "Customer rating",
     "items": [
       {
-        "quote": "Came out within the hour for a burst pipe emergency. Fair price, brilliant work. Couldn't recommend enough.",
+        "quote": "They explained the fault clearly and talked me through the repair before starting. Everything was left tidy.",
         "name": "Sarah M.",
-        "location": "Clapham",
+        "location": "Earlsfield",
         "initials": "SM"
       },
       {
-        "quote": "Replaced our boiler in a single day with zero mess left behind. Professional from start to finish.",
+        "quote": "The new lights look great and the work was carried out carefully. Communication was clear throughout.",
         "name": "James T.",
-        "location": "Streatham",
+        "location": "Southfields",
         "initials": "JT"
       },
       {
-        "quote": "Honest, punctual, and didn't try to upsell us on anything we didn't need. Will be using again.",
+        "quote": "Helpful advice about our consumer unit and no pressure. I would be happy to get in touch again.",
         "name": "Priya K.",
-        "location": "Croydon",
+        "location": "Wandsworth",
         "initials": "PK"
       }
     ]
   },
   "quote": {
-    "eyebrow": "Let's get it sorted",
-    "heading": "Tell us what's<br><em>going on.</em>",
-    "description": "Share a few details and our team will get back to you. Need urgent help? Call us any time.",
-    "smallPrint": "Available 24 hours, every day",
+    "eyebrow": "Get in touch",
+    "heading": "Tell us about<br><em>your job.</em>",
+    "description": "Share a few details and we can discuss what you need. For urgent electrical concerns, call the team.",
+    "smallPrint": "Call to discuss availability",
     "formNote": "We'll use your details to respond to your enquiry.",
     "formAction": "https://formspree.io/f/mljdvzbd",
     "submitButton": "Request my free quote",
     "defaultOption": "Select a service",
     "services": [
       {
-        "value": "emergency-plumbing",
-        "label": "Emergency plumbing"
+        "value": "electrical-repair",
+        "label": "Electrical repair"
       },
       {
-        "value": "boiler",
-        "label": "Boiler repair or installation"
+        "value": "lighting",
+        "label": "Lighting"
       },
       {
-        "value": "central-heating",
-        "label": "Central heating"
+        "value": "rewiring",
+        "label": "Rewiring"
       },
       {
-        "value": "bathroom",
-        "label": "Bathroom plumbing"
+        "value": "fuse-board",
+        "label": "Fuse board"
       },
       {
-        "value": "drains",
-        "label": "Drain clearance"
+        "value": "inspection",
+        "label": "Inspection and testing"
       },
       {
-        "value": "maintenance",
-        "label": "General maintenance"
+        "value": "sockets-switches",
+        "label": "Sockets and switches"
       },
       {
         "value": "other",
@@ -217,56 +212,56 @@
   },
   "images": {
     "hero": {
-      "src": "https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?auto=format&fit=crop&w=768&q=75",
-      "srcset": "https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?auto=format&fit=crop&w=480&q=75 480w, https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?auto=format&fit=crop&w=768&q=75 768w, https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?auto=format&fit=crop&w=1200&q=75 1200w, https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?auto=format&fit=crop&w=1600&q=75 1600w",
+      "src": "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=768&q=75",
+      "srcset": "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=480&q=75 480w, https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=768&q=75 768w, https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200&q=75 1200w, https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1600&q=75 1600w",
       "sizes": "(max-width: 700px) calc(100vw - 40px), 42vw",
-      "alt": "Plumber working on pipework beneath a kitchen sink"
+      "alt": "Electrician carrying out electrical installation work"
     },
     "about": {
-      "src": "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=768&q=75",
-      "srcset": "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=480&q=75 480w, https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=768&q=75 768w, https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1100&q=75 1100w, https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1400&q=75 1400w",
+      "src": "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=768&q=75",
+      "srcset": "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=480&q=75 480w, https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=768&q=75 768w, https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1100&q=75 1100w, https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1400&q=75 1400w",
       "sizes": "(max-width: 700px) 100vw, 50vw",
-      "alt": "Qualified tradesperson carefully installing plumbing equipment"
+      "alt": "Electrician working on an installation"
     },
     "work": [
       {
-        "src": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=480&q=75",
-        "srcset": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=360&q=75 360w, https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=480&q=75 480w, https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=640&q=75 640w, https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=75 900w",
+        "src": "https://images.unsplash.com/photo-1660330589693-99889d60181e?auto=format&fit=crop&w=480&q=75",
+        "srcset": "https://images.unsplash.com/photo-1660330589693-99889d60181e?auto=format&fit=crop&w=360&q=75 360w, https://images.unsplash.com/photo-1660330589693-99889d60181e?auto=format&fit=crop&w=480&q=75 480w, https://images.unsplash.com/photo-1660330589693-99889d60181e?auto=format&fit=crop&w=640&q=75 640w, https://images.unsplash.com/photo-1660330589693-99889d60181e?auto=format&fit=crop&w=900&q=75 900w",
         "sizes": "(max-width: 700px) calc(100vw - 40px), (max-width: 1240px) 32vw, 400px",
-        "alt": "Neatly installed radiator and heating pipework"
+        "alt": "Electrician working on an electrical panel"
       },
       {
-        "src": "https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=360&q=75",
-        "srcset": "https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=240&q=75 240w, https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=360&q=75 360w, https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=480&q=75 480w, https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=640&q=75 640w, https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=900&q=75 900w",
+        "src": "https://images.unsplash.com/photo-1758101755915-462eddc23f57?auto=format&fit=crop&w=360&q=75",
+        "srcset": "https://images.unsplash.com/photo-1758101755915-462eddc23f57?auto=format&fit=crop&w=240&q=75 240w, https://images.unsplash.com/photo-1758101755915-462eddc23f57?auto=format&fit=crop&w=360&q=75 360w, https://images.unsplash.com/photo-1758101755915-462eddc23f57?auto=format&fit=crop&w=480&q=75 480w, https://images.unsplash.com/photo-1758101755915-462eddc23f57?auto=format&fit=crop&w=640&q=75 640w, https://images.unsplash.com/photo-1758101755915-462eddc23f57?auto=format&fit=crop&w=900&q=75 900w",
         "sizes": "(max-width: 700px) calc(50vw - 25px), (max-width: 1240px) 32vw, 400px",
-        "alt": "Modern bathroom with carefully finished fixtures"
+        "alt": "Electrician checking an electrical panel with a multimeter"
       },
       {
-        "src": "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=360&q=75",
-        "srcset": "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=240&q=75 240w, https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=360&q=75 360w, https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=480&q=75 480w, https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=640&q=75 640w, https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=75 900w",
+        "src": "https://images.unsplash.com/photo-1635335874521-7987db781153?auto=format&fit=crop&w=360&q=75",
+        "srcset": "https://images.unsplash.com/photo-1635335874521-7987db781153?auto=format&fit=crop&w=240&q=75 240w, https://images.unsplash.com/photo-1635335874521-7987db781153?auto=format&fit=crop&w=360&q=75 360w, https://images.unsplash.com/photo-1635335874521-7987db781153?auto=format&fit=crop&w=480&q=75 480w, https://images.unsplash.com/photo-1635335874521-7987db781153?auto=format&fit=crop&w=640&q=75 640w, https://images.unsplash.com/photo-1635335874521-7987db781153?auto=format&fit=crop&w=900&q=75 900w",
         "sizes": "(max-width: 700px) calc(50vw - 25px), (max-width: 1240px) 32vw, 400px",
-        "alt": "Bright, finished home interior after renovation"
+        "alt": "Electrical wires connected to a switch box"
       }
     ]
   },
   "map": {
-    "title": "Map showing South London service area",
-    "src": "https://maps.google.com/maps?q=South%20London%2C%20UK&t=&z=10&ie=UTF8&iwloc=&output=embed"
+    "title": "Map showing Earlsfield service area",
+    "src": "https://maps.google.com/maps?q=Earlsfield%2C%20London%20SW18&t=&z=13&ie=UTF8&iwloc=&output=embed"
   },
   "slogans": {
-    "imageCaption": "GOOD WORK. DONE PROPERLY.",
-    "aboutTagline": "BUILT ON TRUST, NOT SHORTCUTS.",
-    "mapTag": "LOCAL TEAM, LOCAL KNOW-HOW",
-    "footerTagline": "Good work. Done properly. Keeping South London homes running."
+    "imageCaption": "EARLSFIELD ELECTRICIANS",
+    "aboutTagline": "LOCAL ELECTRICAL SERVICES.",
+    "mapTag": "EARLSFIELD AND NEARBY",
+    "footerTagline": "Electrical repairs, upgrades and installations in Earlsfield."
   },
   "footer": {
-    "tagline": "Good work. Done properly.<br>Keeping South London homes running.",
+    "tagline": "Electrical repairs, upgrades and installations in Earlsfield.",
     "getInTouchHeading": "Get in touch",
-    "availableHeading": "Here when you need us",
-    "availability": "Emergency callouts<br>Monday to Sunday, 24/7",
-    "addressLineOne": "123 High Street",
-    "addressLineTwo": "London, SW9 8XY",
-    "locationText": "South London, UK",
-    "copyright": "Apex Plumbing & Heating"
+    "availableHeading": "Areas covered",
+    "availability": "Earlsfield<br>South-west London",
+    "addressLineOne": "Earlsfield",
+    "addressLineTwo": "London, SW18",
+    "locationText": "Earlsfield, London",
+    "copyright": "Earlsfield Electricians"
   }
 }

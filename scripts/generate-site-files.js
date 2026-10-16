@@ -44,24 +44,9 @@ const updateMetadata = (filename, title, description) => {
   fs.writeFileSync(filepath, html);
 };
 
-const addSiteBase = (filename) => {
-  const filepath = path.join(root, filename);
-  let html = fs.readFileSync(filepath, 'utf8');
-  if (!html.includes('<head>')) throw new Error(`Expected a head element in ${filename}.`);
-  const baseTag = `<base href="${htmlEscape(siteRootPath)}">`;
-  if (/<base href="[^"]*">/.test(html)) {
-    html = html.replace(/<base href="[^"]*">/, baseTag);
-  } else {
-    html = html.replace('<head>', `<head>\n        ${baseTag}`);
-  }
-  fs.writeFileSync(filepath, html);
-};
-
 updateMetadata('index.html', config.seo.title, config.seo.description);
 updateMetadata('privacy.html', config.privacy.title, config.privacy.description);
 updateMetadata('404.html', config.seo.notFoundTitle, config.seo.notFoundDescription);
-addSiteBase('privacy.html');
-addSiteBase('404.html');
 
 const sitemapUrls = [`${baseUrl}/`, `${baseUrl}/privacy.html`];
 const sitemap = [
@@ -76,6 +61,5 @@ fs.writeFileSync(path.join(root, 'sitemap.xml'), sitemap);
 fs.writeFileSync(path.join(root, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${baseUrl}/sitemap.xml\n`);
 
 const colors = config.theme.colors;
-const initial = xmlEscape(config.business.brandInitial || config.business.brandName.slice(0, 1));
-const favicon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="18" fill="${xmlEscape(colors.lime)}"/><text x="50" y="73" text-anchor="middle" font-family="Georgia,serif" font-size="70" fill="${xmlEscape(colors['green-deep'])}">${initial}</text></svg>\n`;
+const favicon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="22" fill="${xmlEscape(colors['green-deep'])}"/><path d="M58 8 24 54h22l-4 38 36-54H55z" fill="${xmlEscape(colors.lime)}"/></svg>\n`;
 fs.writeFileSync(path.join(root, 'favicon.svg'), favicon);

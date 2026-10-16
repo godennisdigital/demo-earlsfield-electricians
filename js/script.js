@@ -138,7 +138,7 @@ const applyConfig = (config) => {
 
   const structuredData = {
     '@context': 'https://schema.org',
-    '@type': 'GeneralContractor',
+    '@type': 'Electrician',
     name: business.name,
     telephone: business.phone,
     email: business.email,
@@ -305,7 +305,10 @@ const applyConfig = (config) => {
   setText('[data-config="footerLocation"]', footer.locationText || '');
 
   const quoteFormElement = document.querySelector('[data-config="quoteForm"]');
-  if (quoteFormElement && quote.formAction) quoteFormElement.action = quote.formAction;
+  if (quoteFormElement) {
+    quoteFormElement.dataset.endpointConfigured = String(Boolean(quote.formAction));
+    if (quote.formAction) quoteFormElement.action = quote.formAction;
+  }
   setHtml('[data-config="quoteSubmitButton"]', `${quote.submitButton || 'Send enquiry'} <span aria-hidden="true">↗</span>`);
 };
 
@@ -374,6 +377,11 @@ if (phoneInput && quoteForm && formStatus) {
 
     phoneInput.setCustomValidity("");
     const formData = new FormData(quoteForm);
+
+    if (quoteForm.dataset.endpointConfigured !== "true") {
+      formStatus.textContent = "This demo form isn't connected yet. Please call us to request a quote.";
+      return;
+    }
 
     try {
       const response = await fetch(quoteForm.action, {

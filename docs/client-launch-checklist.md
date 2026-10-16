@@ -4,7 +4,7 @@
 
 ## Business details
 
-- [ ] Replace every Apex name, phone number, email, address, and service-area reference.
+- [ ] Replace every sample business name, phone number, email, address, and service-area reference.
 - [ ] Use the same business name and contact details in the header, footer, metadata, and structured data.
 - [ ] Verify opening hours, qualifications, insurance, years of experience, guarantees, and pricing claims with the client.
 - [ ] Replace all sample testimonials with genuine, approved reviews; remove the rating summary if it cannot be substantiated.
@@ -18,7 +18,7 @@
 - [ ] Check the quote-form privacy notice and custom 404 page on the deployed domain.
 - [ ] Replace the map location and check that the embedded map points to the correct service area.
 - [ ] Replace demo photos with client-owned or properly licensed images; optimize them and keep useful alt text.
-- [ ] Confirm the phone links use a valid international number, for example `tel:+442079460958`.
+- [ ] Confirm phone links use a valid international number in `tel:` format.
 - [ ] Check spelling, accessibility, and mobile layouts at narrow, tablet, and desktop widths.
 
 ## Enquiries and publishing

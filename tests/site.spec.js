@@ -108,49 +108,30 @@ test('validates required quote fields and rejects an invalid phone number', asyn
   await expect(page.locator(siteConfig.formStatusSelector)).toBeEmpty();
 });
 
-test('sends valid quote requests to Formspree and resets after success', async ({ page }) => {
+test('does not send quote details while the demo form has no configured endpoint', async ({ page }) => {
   const form = page.locator(siteConfig.formSelector);
   const status = page.locator(siteConfig.formStatusSelector);
-  const endpoint = await form.getAttribute('action');
   await expect(form).toHaveAttribute('method', 'POST');
+  await expect(form).toHaveAttribute('data-endpoint-configured', 'false');
 
-  await page.route(endpoint, async (route) => {
-    expect(route.request().method()).toBe('POST');
-    expect(route.request().headers().accept).toBe('application/json');
-    expect(route.request().postData()).toContain('Alex Morgan');
-    await route.fulfill({
-      status: 200,
-      contentType: 'application/json',
-      body: JSON.stringify({ ok: true }),
-    });
+  await page.locator(siteConfig.requiredFormFieldSelectors[0]).fill('Alex Morgan');
+  await page.locator(siteConfig.phoneFieldSelector).fill('+447700900123');
+  await page.locator(siteConfig.requiredFormFieldSelectors[2]).selectOption({ index: 1 });
+  await page.locator(siteConfig.requiredFormFieldSelectors[3]).fill('A test enquiry.');
+
+  let requestSent = false;
+  page.on('request', (request) => {
+    const body = request.postData() || '';
+    if (request.method() === 'POST' && (body.includes('Alex Morgan') || body.includes('Alex+Morgan'))) {
+      requestSent = true;
+    }
   });
-
-  await page.locator(siteConfig.requiredFormFieldSelectors[0]).fill('Alex Morgan');
-  await page.locator(siteConfig.phoneFieldSelector).fill('+447700900123');
-  await page.locator(siteConfig.requiredFormFieldSelectors[2]).selectOption({ index: 1 });
-  await page.locator(siteConfig.requiredFormFieldSelectors[3]).fill('A test enquiry.');
   await form.locator('button[type="submit"]').click();
 
-  await expect(status).toContainText(/request has been sent/i);
-  await expect(page.locator(siteConfig.requiredFormFieldSelectors[0])).toHaveValue('');
-  await expect(page.locator(siteConfig.phoneFieldSelector)).toHaveValue('');
-});
-
-test('keeps quote details and reports an error when Formspree rejects a request', async ({ page }) => {
-  const form = page.locator(siteConfig.formSelector);
-  const status = page.locator(siteConfig.formStatusSelector);
-  const endpoint = await form.getAttribute('action');
-
-  await page.route(endpoint, (route) => route.fulfill({ status: 422, body: 'Submission rejected' }));
-  await page.locator(siteConfig.requiredFormFieldSelectors[0]).fill('Alex Morgan');
-  await page.locator(siteConfig.phoneFieldSelector).fill('+447700900123');
-  await page.locator(siteConfig.requiredFormFieldSelectors[2]).selectOption({ index: 1 });
-  await page.locator(siteConfig.requiredFormFieldSelectors[3]).fill('A test enquiry.');
-  await form.locator('button[type="submit"]').click();
-
-  await expect(status).toContainText(/couldn't send your request/i);
+  await expect(status).toContainText(/form isn't connected yet/i);
   await expect(page.locator(siteConfig.requiredFormFieldSelectors[0])).toHaveValue('Alex Morgan');
   await expect(page.locator(siteConfig.phoneFieldSelector)).toHaveValue('+447700900123');
+  expect(requestSent).toBe(false);
 });
 
 test('keeps contact links consistent with structured business data', async ({ page }) => {
@@ -193,8 +174,7 @@ test('renders footer content from site config', async ({ page }) => {
   await expect(contactColumn.locator('[data-config="footerAddressLineTwo"]')).toHaveText(clientConfig.footer.addressLineTwo);
   await expect(informationColumn.locator('[data-config="footerAvailabilityHeading"]')).toHaveText(clientConfig.footer.availableHeading);
   expect(await informationColumn.locator('[data-config="footerAvailability"]').innerHTML()).toBe(clientConfig.footer.availability);
-  await expect(informationColumn.locator('[data-config="facebookLink"]')).toHaveAttribute('href', clientConfig.business.facebookUrl);
-  await expect(informationColumn.locator('[data-config="instagramLink"]')).toHaveAttribute('href', clientConfig.business.instagramUrl);
+  await expect(informationColumn.locator('[data-config="facebookLink"], [data-config="instagramLink"]')).toHaveCount(0);
 });
 
 test('serves privacy and 404 pages with config-generated metadata', async ({ page, request }) => {
@@ -211,10 +191,11 @@ test('serves privacy and 404 pages with config-generated metadata', async ({ pag
 
   const formPrivacyLink = page.locator('#contact-form a[href="privacy.html"]');
   await expect(formPrivacyLink).toHaveText('Privacy policy');
-  await expect(page.locator('[data-config="formNote"]')).toContainText('respond to your enquiry');
+  await expect(page.locator('[data-config="formNote"]')).toContainText("is not connected yet");
 
   await page.goto('/privacy.html');
   await expect(page).toHaveTitle(clientConfig.privacy.title);
+  await expect(page.locator('body')).toHaveCSS('display', 'flex');
   await expect(page.locator('meta[name="description"]')).toHaveAttribute('content', clientConfig.privacy.description);
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(clientConfig.privacy.heading);
   await expect(page.locator('[data-config="privacyContactEmail"]')).toHaveText(clientConfig.business.email);
@@ -227,12 +208,13 @@ test('serves privacy and 404 pages with config-generated metadata', async ({ pag
   await page.goto('/404.html');
   await expect(page).toHaveTitle(clientConfig.seo.notFoundTitle);
   await expect(page.locator('meta[name="description"]')).toHaveAttribute('content', clientConfig.seo.notFoundDescription);
-  const configuredBase = new URL(clientConfig.siteUrl);
-  await expect(page.locator('base')).toHaveAttribute(
-    'href',
-    `${configuredBase.pathname.replace(/\/+$/, '')}/`,
-  );
   await expect(page.locator('[data-config="notFoundMessage"]')).toHaveText(clientConfig.seo.notFoundDescription);
+});
+
+test('applies the stylesheet to the privacy page', async ({ page }) => {
+  await page.goto('/privacy.html');
+  await expect(page.locator('body')).toHaveCSS('display', 'flex');
+  await expect(page.locator('.policy-content h1')).toHaveCSS('font-size', '46px');
 });
 
 test('generates robots, sitemap, and favicon from the configured domain and brand', async ({ request }) => {
@@ -250,7 +232,8 @@ test('generates robots, sitemap, and favicon from the configured domain and bran
   expect(sitemap).toContain(`${siteBase}/privacy.html`);
   expect(faviconResponse.ok()).toBe(true);
   const favicon = await faviconResponse.text();
-  expect(favicon).toContain(`>${clientConfig.business.brandInitial}</text>`);
+  expect(favicon).toContain('<path d="M58 8 24 54h22l-4 38 36-54H55z"');
+  expect(favicon).toContain(clientConfig.theme.colors['green-deep']);
   expect(favicon).toContain(clientConfig.theme.colors.lime);
 });
 

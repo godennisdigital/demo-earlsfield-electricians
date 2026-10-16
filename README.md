@@ -1,6 +1,6 @@
 # Trades Website Template
 
-A mobile-first, no-build static website starter for independent trades and home-service businesses. The included page is a visual demo for Apex Plumbing & Heating; replace its sample business details and claims before using this template for a client.
+A mobile-first, no-build static website starter for independent trades and home-service businesses. The included page is a fictional Earlsfield electricians demo; replace its sample business details and claims before using this template for a client.
 
 ## Start a client project
 
@@ -27,7 +27,7 @@ npx playwright install chromium
 
 Run the suite with `npm test`. To see the browser while tests run, use `npm run test:headed`; after a run, open its HTML report with `npm run test:report`. The test runner starts the existing static site automatically. Set `PLAYWRIGHT_BASE_URL` only when testing a separately hosted copy.
 
-When adapting this template, edit `tests/site.config.json` if sections, service-card markup, or form selectors change. The tests intentionally infer client-specific phone details from the page and its structured data rather than hard-coding Apex's contact information.
+When adapting this template, edit `tests/site.config.json` if sections, service-card markup, or form selectors change. The tests intentionally infer client-specific phone details from the page and its structured data rather than hard-coding client contact information.
 
 ## Project layout
 
@@ -38,7 +38,7 @@ When adapting this template, edit `tests/site.config.json` if sections, service-
 ├── 404.html                      # Static-host not-found page
 ├── robots.txt                    # Generated from site.config.json
 ├── sitemap.xml                   # Generated from site.config.json
-├── favicon.svg                   # Generated from brand initial and theme colors
+├── favicon.svg                   # Generated lightning bolt in the configured brand colors
 ├── css/
 │   └── style.css                 # Responsive styles and theme variables
 ├── js/
@@ -64,7 +64,7 @@ When adapting this template, edit `tests/site.config.json` if sections, service-
 
 ## Form behavior
 
-The quote form validates required fields and a 10–15 digit phone number in the browser, then posts submissions to the Formspree endpoint configured in `site.config.json`. Successful submissions show confirmation and clear the form; failed requests retain the entered details and show an error. Verify the endpoint delivers to the intended inbox and that the privacy policy accurately describes the provider and its handling of submitted data before launch.
+The quote form validates required fields and a 10–15 digit phone number in the browser. The fictional demo has no submission endpoint; it tells visitors to call instead of sending their personal details anywhere. Configure an agreed inbox or form provider and update the privacy policy before enabling submissions.
 
 ## Privacy template
 
@@ -72,4 +72,4 @@ The quote form validates required fields and a 10–15 digit phone number in the
 
 ## External services
 
-The demo loads fonts and photos from Google Fonts and Unsplash, and embeds a Google Maps iframe. These require an internet connection and are not bundled locally. Confirm the chosen assets and services are appropriate for each client and their privacy requirements.
+The demo loads photos from Unsplash and embeds a Google Maps iframe. These require an internet connection and are not bundled locally. Confirm the chosen assets and services are appropriate for each client and their privacy requirements.
