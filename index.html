@@ -125,7 +125,20 @@
                 </form>
             </section>
         </main>
+pdate the notice bar copy and responsive layout.
 
+Content in site.config.json:
+
+Set notice.text to: This is a demo site. All content is fictional and for demonstration purposes only.
+Set notice.linkText to: Get in touch about your own website
+Layout in css/style.css:
+
+Change .notice-bar from flexbox to a three-column CSS grid: a 7px status-dot column, a flexible text column (minmax(0, 1fr)), and an auto-width link column.
+Keep the existing minimum height and padding, and use a column gap of 9px. This lets the notice text wrap without colliding with the link.
+Set .notice-bar p to min-width: 0, remove its margin, and center its text at wider sizes. Remove absolute positioning from .notice-bar a and align it to the end of its grid column.
+At widths up to 700px, change the bar to two columns, align items to the top, and add a 3px row gap. Left-align the notice text and place the link in the second column on its own row. Keep 16px horizontal padding and 9px text. This lets the bar grow taller when the content wraps.
+At widths up to 380px, use a 7px column gap and reduce the bar and link text to 8px.
+No HTML or JavaScript was changed. The config was validated as JSON after the copy change; the CSS layout was not browser-tested.
         <footer class="site-footer" id="footer">
             <div class="footer-main"><div class="footer-brand"><a class="brand brand-light" href="#top"><span class="brand-mark" aria-hidden="true"><img class="brand-mark-image" src="favicon.svg" alt=""></span><span class="brand-name"><span data-config="brandName">Business</span> <small data-config="brandTagline">Services</small></span></a><p data-config="footerTagline">Company details</p></div>
                 <div class="footer-column"><h2 data-config="footerGetInTouch">Get in touch</h2><a href="#quote-form" data-config="footerPhone" data-config-attr="href:phoneHref">Contact us</a><a href="mailto:" data-config="footerEmail" data-config-attr="href:emailHref">Email us</a><p><span data-config="footerAddressLineOne">Location</span><br><span data-config="footerAddressLineTwo">Service area</span></p></div>
