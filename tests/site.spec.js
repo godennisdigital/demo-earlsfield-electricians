@@ -58,7 +58,7 @@ test('keeps in-page links and service cards connected to real content', async ({
   for (const card of await serviceCards.all()) {
     await expect(card.locator('h3')).toHaveText(/\S/);
     await expect(card.locator('p')).toHaveText(/\S/);
-    await expect(card.locator('a')).toHaveAttribute('href', '#quote-form');
+    await expect(card.locator('a')).toHaveAttribute('href', 'contact.html#quote-form');
   }
 });
 
@@ -81,12 +81,13 @@ test('provides working desktop and mobile navigation', async ({ page }) => {
   await expect(navigation).toBeHidden();
 
   await menuButton.click();
-  await navigation.locator('a[href="#available-services"]').click();
-  await expect(page).toHaveURL(/#available-services$/);
+  await navigation.locator('a[href="services.html"]').click();
+  await expect(page).toHaveURL(/services\.html$/);
   await expect(menuButton).toHaveAttribute('aria-expanded', 'false');
 });
 
 test('validates required quote fields and rejects an invalid phone number', async ({ page }) => {
+  await page.goto('/contact.html');
   const form = page.locator(siteConfig.formSelector);
   const nameField = page.locator(siteConfig.requiredFormFieldSelectors[0]);
   const phoneField = page.locator(siteConfig.phoneFieldSelector);
@@ -109,6 +110,7 @@ test('validates required quote fields and rejects an invalid phone number', asyn
 });
 
 test('does not send quote details while the demo form has no configured endpoint', async ({ page }) => {
+  await page.goto('/contact.html');
   const form = page.locator(siteConfig.formSelector);
   const status = page.locator(siteConfig.formStatusSelector);
   await expect(form).toHaveAttribute('method', 'POST');
@@ -189,6 +191,7 @@ test('serves privacy and 404 pages with config-generated metadata', async ({ pag
   await expect(page.locator('meta[name="description"]')).toHaveAttribute('content', clientConfig.seo.description);
   await expect(page.locator('link[rel="icon"]')).toHaveAttribute('href', 'favicon.svg');
 
+  await page.goto('/contact.html');
   const formPrivacyLink = page.locator('#contact-form a[href="privacy.html"]');
   await expect(formPrivacyLink).toHaveText('Privacy policy');
   await expect(page.locator('[data-config="formNote"]')).toContainText("is not connected yet");
@@ -229,6 +232,10 @@ test('generates robots, sitemap, and favicon from the configured domain and bran
   expect(sitemapResponse.ok()).toBe(true);
   const sitemap = await sitemapResponse.text();
   expect(sitemap).toContain(`${siteBase}/`);
+  expect(sitemap).toContain(`${siteBase}/services.html`);
+  expect(sitemap).toContain(`${siteBase}/about.html`);
+  expect(sitemap).toContain(`${siteBase}/reviews.html`);
+  expect(sitemap).toContain(`${siteBase}/contact.html`);
   expect(sitemap).toContain(`${siteBase}/privacy.html`);
   expect(faviconResponse.ok()).toBe(true);
   const favicon = await faviconResponse.text();
@@ -248,8 +255,8 @@ test('has no serious or critical accessibility violations', async ({ page }) => 
   expect(significantViolations).toEqual([]);
 });
 
-test('privacy and not-found pages have no serious or critical accessibility violations', async ({ page }) => {
-  for (const pathname of ['/privacy.html', '/404.html']) {
+test('inner pages have no serious or critical accessibility violations', async ({ page }) => {
+  for (const pathname of ['/services.html', '/about.html', '/reviews.html', '/contact.html', '/privacy.html', '/404.html']) {
     await page.goto(pathname);
     const results = await new AxeBuilder({ page })
       .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
@@ -284,13 +291,11 @@ test('keeps page content visible across device sizes and resolutions', async ({ 
     '.hero-copy',
     '.hero-visual',
     '.services-grid',
-    '.about-copy',
     '.area-copy',
     '.map-frame',
-    '.work-gallery',
     '.review-grid',
-    '.quote-intro',
-    '.quote-form',
+    '.trust-badges',
+    '.closing-cta-copy',
     '.footer-main',
   ].join(', ');
 

@@ -7,6 +7,8 @@
     "brandInitial": "E",
     "phone": "+442079460001",
     "phoneDisplay": "020 7946 0001",
+    "whatsapp": "+447700900001",
+    "whatsappDisplay": "07700 900001",
     "email": "hello@earlsfield-electricians.example",
     "streetAddress": "Earlsfield",
     "locality": "London",
@@ -25,7 +27,25 @@
     "title": "Earlsfield Electricians | Electrical Services in SW18",
     "description": "Electrical repairs, lighting, rewiring and inspections for homes and businesses in Earlsfield and nearby areas.",
     "notFoundTitle": "Page not found | Earlsfield Electricians",
-    "notFoundDescription": "The page you requested could not be found. Contact Earlsfield Electricians for help."
+    "notFoundDescription": "The page you requested could not be found. Contact Earlsfield Electricians for help.",
+    "pages": {
+      "services": {
+        "title": "Electrical Services | Earlsfield Electricians",
+        "description": "Rewiring, fuse boards, lighting, repairs, inspections and socket work for homes and businesses in Earlsfield and nearby."
+      },
+      "about": {
+        "title": "About | Earlsfield Electricians",
+        "description": "Meet James Hartley, the NICEIC-registered electrician behind Earlsfield Electricians."
+      },
+      "reviews": {
+        "title": "Reviews | Earlsfield Electricians",
+        "description": "Customer reviews, Google rating and before-and-after electrical work from Earlsfield Electricians."
+      },
+      "contact": {
+        "title": "Contact & Quotes | Earlsfield Electricians",
+        "description": "Request a free quote, call or WhatsApp Earlsfield Electricians. Covering Earlsfield and nearby SW London."
+      }
+    }
   },
   "privacy": {
     "title": "Privacy Policy | Earlsfield Electricians",
@@ -74,6 +94,11 @@
     "imageNoteBody": "Repairs, upgrades and installations",
     "imageBadge": "EE"
   },
+  "trustBadges": [
+    "NICEIC Approved",
+    "Part P Compliant",
+    "Fully Insured"
+  ],
   "trustStrip": [
     "Domestic and commercial",
     "Clear recommendations",
@@ -84,6 +109,11 @@
     "eyebrow": "Electrical services",
     "heading": "Help with the jobs<br><em>that keep you powered.</em>",
     "intro": "From a faulty socket to a planned upgrade, find straightforward electrical support for your property."
+  },
+  "servicesPage": {
+    "eyebrow": "What we offer",
+    "heading": "Electrical services<br><em>for homes and businesses.</em>",
+    "intro": "Choose the job you need help with and request a free quote. We’ll talk through the work before anything starts."
   },
   "services": [
     {
@@ -112,12 +142,41 @@
     }
   ],
   "about": {
-    "eyebrow": "Your local electrical team",
+    "eyebrow": "Your local electrician",
     "heading": "Local electrical help.<br><em>Careful work.</em>",
-    "intro": "Earlsfield Electricians is a local electrical service for homes and small businesses. Tell us what needs doing and we’ll talk you through the next steps.",
-    "supporting": "We work across Earlsfield and neighbouring parts of south-west London.",
+    "intro": "I’m James Hartley, the owner-electrician behind Earlsfield Electricians. I started the business to give neighbours clear advice and tidy, reliable work without the runaround.",
+    "supporting": "Whether it’s a quick repair or a full upgrade, you’ll deal with me directly — from the first call through to the finished job.",
     "cta": "Ask about your job",
-    "tagline": "LOCAL ELECTRICAL SERVICES."
+    "tagline": "LOCAL ELECTRICAL SERVICES.",
+    "ownerName": "James Hartley",
+    "ownerRole": "Owner-electrician",
+    "experienceYears": "14",
+    "experienceSuffix": "+",
+    "experienceLabel": "YEARS\nTRADING",
+    "storyHeading": "How the business started",
+    "story": "After years on larger sites, I set up in Earlsfield to focus on domestic and small-commercial work close to home. Most of my work still comes from recommendations on the neighbouring streets.",
+    "qualificationsHeading": "Qualifications and accreditations",
+    "qualifications": [
+      "City & Guilds Level 3 (2365)",
+      "18th Edition BS 7671",
+      "NICEIC Approved Contractor",
+      "Part P registered"
+    ],
+    "howWeWorkHeading": "How I work",
+    "howWeWork": [
+      {
+        "title": "Tidy",
+        "description": "Dust sheets down, tools organised, and the area left cleaner than I found it."
+      },
+      {
+        "title": "On time",
+        "description": "Clear arrival windows and a message if anything changes on the day."
+      },
+      {
+        "title": "Clear pricing",
+        "description": "A straightforward quote before work begins — no surprise extras."
+      }
+    ]
   },
   "area": {
     "eyebrow": "Close by, ready to help",
@@ -135,20 +194,36 @@
     "mapTag": "EARLSFIELD AND NEARBY"
   },
   "work": {
-    "eyebrow": "Electrical work",
-    "heading": "Practical upgrades<br><em>for everyday spaces.</em>",
-    "intro": "A look at the installations and improvements our team can help with.",
-    "items": [
-      { "category": "LIGHTING", "title": "Light where you need it" },
-      { "category": "REWIRING", "title": "Plan for an upgrade" },
-      { "category": "INSTALLATIONS", "title": "Everyday electrical work" }
-    ]
+    "eyebrow": "Before and after",
+    "heading": "The work speaks<br><em>for itself.</em>",
+    "intro": "A few recent jobs — old installations brought up to a safer, tidier finish."
   },
+  "beforeAfter": [
+    {
+      "category": "FUSE BOARD",
+      "title": "Consumer unit upgrade",
+      "beforeAlt": "Dated fuse board before replacement",
+      "afterAlt": "New consumer unit after upgrade"
+    },
+    {
+      "category": "LIGHTING",
+      "title": "Kitchen lighting refresh",
+      "beforeAlt": "Old kitchen lighting before update",
+      "afterAlt": "Updated kitchen lighting after installation"
+    },
+    {
+      "category": "REWIRING",
+      "title": "Partial rewire tidy-up",
+      "beforeAlt": "Exposed wiring before remedial work",
+      "afterAlt": "Neatly finished wiring after rewire"
+    }
+  ],
   "reviews": {
     "eyebrow": "Local feedback",
     "heading": "A few words<br><em>from customers.</em>",
     "rating": "5.0",
-    "ratingLabel": "Customer rating",
+    "ratingLabel": "Google rating · 47 reviews",
+    "googleSummary": "Rated 5.0 on Google from 47 customer reviews across Earlsfield and nearby.",
     "items": [
       {
         "quote": "They explained the fault clearly and talked me through the repair before starting. Everything was left tidy.",
@@ -167,6 +242,58 @@
         "name": "Priya K.",
         "location": "Wandsworth",
         "initials": "PK"
+      },
+      {
+        "quote": "Booked an EICR for our flat and had the report the same afternoon. Straightforward and professional.",
+        "name": "Daniel R.",
+        "location": "Tooting",
+        "initials": "DR"
+      },
+      {
+        "quote": "Arrived on time, protected the flooring and finished the socket work faster than quoted.",
+        "name": "Amelia W.",
+        "location": "Wimbledon",
+        "initials": "AW"
+      },
+      {
+        "quote": "Fair price for a partial rewire and regular updates while the job was underway. Highly recommended.",
+        "name": "Omar H.",
+        "location": "Earlsfield",
+        "initials": "OH"
+      }
+    ]
+  },
+  "homeCta": {
+    "eyebrow": "Ready when you are",
+    "heading": "Need an electrician<br><em>in Earlsfield?</em>",
+    "description": "Call for urgent help or send a few details for a free quote. Local, insured and happy to talk through the job first.",
+    "primaryButton": "Call 020 7946 0001",
+    "secondaryButton": "Request a free quote"
+  },
+  "contact": {
+    "eyebrow": "Get in touch",
+    "heading": "Tell us about<br><em>your job.</em>",
+    "description": "Share a few details and we can discuss what you need. For urgent electrical concerns, call or message on WhatsApp.",
+    "hoursHeading": "Opening hours",
+    "hours": [
+      "Monday–Friday: 8am–6pm",
+      "Saturday: 9am–1pm",
+      "Sunday: Closed",
+      "Emergency call-outs by arrangement"
+    ],
+    "faqHeading": "Quick answers",
+    "faq": [
+      {
+        "question": "Do you charge a callout fee?",
+        "answer": "Yes — £65 within Earlsfield and SW18, usually credited against the job if you go ahead with the work."
+      },
+      {
+        "question": "How quickly can you respond?",
+        "answer": "Urgent faults are often same-day when the diary allows. Routine quotes are normally within one to two working days."
+      },
+      {
+        "question": "Are you insured and accredited?",
+        "answer": "Yes. NICEIC approved, Part P registered and fully insured for domestic and small-commercial work."
       }
     ]
   },
@@ -175,8 +302,8 @@
     "heading": "Tell us about<br><em>your job.</em>",
     "description": "Share a few details and we can discuss what you need. For urgent electrical concerns, call the team.",
     "smallPrint": "Call to discuss availability",
-    "formNote": "We'll use your details to respond to your enquiry.",
-    "formAction": "https://formspree.io/f/mljdvzbd",
+    "formNote": "This demo form is not connected yet. Please call us to request a quote.",
+    "formAction": "",
     "submitButton": "Request my free quote",
     "defaultOption": "Select a service",
     "services": [
@@ -218,29 +345,53 @@
       "alt": "Electrician carrying out electrical installation work"
     },
     "about": {
-      "src": "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=768&q=75",
-      "srcset": "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=480&q=75 480w, https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=768&q=75 768w, https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1100&q=75 1100w, https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1400&q=75 1400w",
+      "src": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=768&q=75",
+      "srcset": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=480&q=75 480w, https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=768&q=75 768w, https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1100&q=75 1100w, https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1400&q=75 1400w",
       "sizes": "(max-width: 700px) 100vw, 50vw",
-      "alt": "Electrician working on an installation"
+      "alt": "Electrician James Hartley at work"
     },
-    "work": [
+    "beforeAfter": [
       {
-        "src": "https://images.unsplash.com/photo-1660330589693-99889d60181e?auto=format&fit=crop&w=480&q=75",
-        "srcset": "https://images.unsplash.com/photo-1660330589693-99889d60181e?auto=format&fit=crop&w=360&q=75 360w, https://images.unsplash.com/photo-1660330589693-99889d60181e?auto=format&fit=crop&w=480&q=75 480w, https://images.unsplash.com/photo-1660330589693-99889d60181e?auto=format&fit=crop&w=640&q=75 640w, https://images.unsplash.com/photo-1660330589693-99889d60181e?auto=format&fit=crop&w=900&q=75 900w",
-        "sizes": "(max-width: 700px) calc(100vw - 40px), (max-width: 1240px) 32vw, 400px",
-        "alt": "Electrician working on an electrical panel"
+        "before": {
+          "src": "https://images.unsplash.com/photo-1660330589693-99889d60181e?auto=format&fit=crop&w=480&q=75",
+          "srcset": "https://images.unsplash.com/photo-1660330589693-99889d60181e?auto=format&fit=crop&w=360&q=75 360w, https://images.unsplash.com/photo-1660330589693-99889d60181e?auto=format&fit=crop&w=480&q=75 480w, https://images.unsplash.com/photo-1660330589693-99889d60181e?auto=format&fit=crop&w=640&q=75 640w, https://images.unsplash.com/photo-1660330589693-99889d60181e?auto=format&fit=crop&w=900&q=75 900w",
+          "sizes": "(max-width: 700px) calc(50vw - 28px), (max-width: 1240px) 22vw, 280px",
+          "alt": "Dated fuse board before replacement"
+        },
+        "after": {
+          "src": "https://images.unsplash.com/photo-1758101755915-462eddc23f57?auto=format&fit=crop&w=480&q=75",
+          "srcset": "https://images.unsplash.com/photo-1758101755915-462eddc23f57?auto=format&fit=crop&w=360&q=75 360w, https://images.unsplash.com/photo-1758101755915-462eddc23f57?auto=format&fit=crop&w=480&q=75 480w, https://images.unsplash.com/photo-1758101755915-462eddc23f57?auto=format&fit=crop&w=640&q=75 640w, https://images.unsplash.com/photo-1758101755915-462eddc23f57?auto=format&fit=crop&w=900&q=75 900w",
+          "sizes": "(max-width: 700px) calc(50vw - 28px), (max-width: 1240px) 22vw, 280px",
+          "alt": "New consumer unit after upgrade"
+        }
       },
       {
-        "src": "https://images.unsplash.com/photo-1758101755915-462eddc23f57?auto=format&fit=crop&w=360&q=75",
-        "srcset": "https://images.unsplash.com/photo-1758101755915-462eddc23f57?auto=format&fit=crop&w=240&q=75 240w, https://images.unsplash.com/photo-1758101755915-462eddc23f57?auto=format&fit=crop&w=360&q=75 360w, https://images.unsplash.com/photo-1758101755915-462eddc23f57?auto=format&fit=crop&w=480&q=75 480w, https://images.unsplash.com/photo-1758101755915-462eddc23f57?auto=format&fit=crop&w=640&q=75 640w, https://images.unsplash.com/photo-1758101755915-462eddc23f57?auto=format&fit=crop&w=900&q=75 900w",
-        "sizes": "(max-width: 700px) calc(50vw - 25px), (max-width: 1240px) 32vw, 400px",
-        "alt": "Electrician checking an electrical panel with a multimeter"
+        "before": {
+          "src": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=480&q=75",
+          "srcset": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=360&q=75 360w, https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=480&q=75 480w, https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=640&q=75 640w, https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=75 900w",
+          "sizes": "(max-width: 700px) calc(50vw - 28px), (max-width: 1240px) 22vw, 280px",
+          "alt": "Old kitchen lighting before update"
+        },
+        "after": {
+          "src": "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?auto=format&fit=crop&w=480&q=75",
+          "srcset": "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?auto=format&fit=crop&w=360&q=75 360w, https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?auto=format&fit=crop&w=480&q=75 480w, https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?auto=format&fit=crop&w=640&q=75 640w, https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?auto=format&fit=crop&w=900&q=75 900w",
+          "sizes": "(max-width: 700px) calc(50vw - 28px), (max-width: 1240px) 22vw, 280px",
+          "alt": "Updated kitchen lighting after installation"
+        }
       },
       {
-        "src": "https://images.unsplash.com/photo-1635335874521-7987db781153?auto=format&fit=crop&w=360&q=75",
-        "srcset": "https://images.unsplash.com/photo-1635335874521-7987db781153?auto=format&fit=crop&w=240&q=75 240w, https://images.unsplash.com/photo-1635335874521-7987db781153?auto=format&fit=crop&w=360&q=75 360w, https://images.unsplash.com/photo-1635335874521-7987db781153?auto=format&fit=crop&w=480&q=75 480w, https://images.unsplash.com/photo-1635335874521-7987db781153?auto=format&fit=crop&w=640&q=75 640w, https://images.unsplash.com/photo-1635335874521-7987db781153?auto=format&fit=crop&w=900&q=75 900w",
-        "sizes": "(max-width: 700px) calc(50vw - 25px), (max-width: 1240px) 32vw, 400px",
-        "alt": "Electrical wires connected to a switch box"
+        "before": {
+          "src": "https://images.unsplash.com/photo-1635335874521-7987db781153?auto=format&fit=crop&w=480&q=75",
+          "srcset": "https://images.unsplash.com/photo-1635335874521-7987db781153?auto=format&fit=crop&w=360&q=75 360w, https://images.unsplash.com/photo-1635335874521-7987db781153?auto=format&fit=crop&w=480&q=75 480w, https://images.unsplash.com/photo-1635335874521-7987db781153?auto=format&fit=crop&w=640&q=75 640w, https://images.unsplash.com/photo-1635335874521-7987db781153?auto=format&fit=crop&w=900&q=75 900w",
+          "sizes": "(max-width: 700px) calc(50vw - 28px), (max-width: 1240px) 22vw, 280px",
+          "alt": "Exposed wiring before remedial work"
+        },
+        "after": {
+          "src": "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=480&q=75",
+          "srcset": "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=360&q=75 360w, https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=480&q=75 480w, https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=640&q=75 640w, https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=900&q=75 900w",
+          "sizes": "(max-width: 700px) calc(50vw - 28px), (max-width: 1240px) 22vw, 280px",
+          "alt": "Neatly finished wiring after rewire"
+        }
       }
     ]
   },

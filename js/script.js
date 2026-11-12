@@ -68,13 +68,32 @@ const applyImages = (images) => {
     if (image.sizes) element.sizes = image.sizes;
     if (image.alt) element.alt = image.alt;
   });
+
+  (images.beforeAfter || []).forEach((pair, index) => {
+    ['before', 'after'].forEach((side) => {
+      const image = pair[side];
+      const element = document.querySelector(`[data-config="beforeAfter-${side}-${index}"]`);
+      if (!element || !image) return;
+      if (image.src) element.src = image.src;
+      if (image.srcset) element.srcset = image.srcset;
+      if (image.sizes) element.sizes = image.sizes;
+      if (image.alt) element.alt = image.alt;
+    });
+  });
 };
 
 const applyMap = (mapConfig) => {
-  const mapFrame = document.querySelector('[data-config="serviceMap"]');
-  if (!mapFrame || !mapConfig) return;
-  if (mapConfig.title) mapFrame.title = mapConfig.title;
-  if (mapConfig.src) mapFrame.src = mapConfig.src;
+  if (!mapConfig) return;
+  document.querySelectorAll('[data-config="serviceMap"]').forEach((mapFrame) => {
+    if (mapConfig.title) mapFrame.title = mapConfig.title;
+    if (mapConfig.src) mapFrame.src = mapConfig.src;
+  });
+};
+
+const whatsappHrefFromNumber = (number) => {
+  if (!number) return '#';
+  const digits = String(number).replace(/\D/g, '');
+  return digits ? `https://wa.me/${digits}` : '#';
 };
 
 const applyQuoteFormOptions = (quoteConfig) => {
@@ -126,6 +145,9 @@ const applyConfig = (config) => {
   const work = config.work || {};
   const reviews = config.reviews || {};
   const quote = config.quote || {};
+  const contact = config.contact || {};
+  const homeCta = config.homeCta || {};
+  const servicesPage = config.servicesPage || {};
   const footer = config.footer || {};
   const privacy = config.privacy || {};
   const pageType = document.documentElement.dataset.page || 'home';
@@ -157,7 +179,7 @@ const applyConfig = (config) => {
     ? privacy
     : pageType === 'not-found'
       ? { title: seo.notFoundTitle, description: seo.notFoundDescription }
-      : seo;
+      : (seo.pages && seo.pages[pageType]) || seo;
   if (pageSeo.title) document.title = pageSeo.title;
 
   const metaDescription = document.querySelector('meta[name="description"]');
@@ -197,9 +219,12 @@ const applyConfig = (config) => {
   setAttributeByConfig('[data-config="brandHomeLabel"]', 'aria-label', `${business.name || 'Business'} home`);
 
   document.querySelectorAll('[data-config-attr="href:phoneHref"]').forEach((element) => {
-    element.href = business.phone ? `tel:${business.phone}` : '#quote-form';
+    element.href = business.phone ? `tel:${business.phone}` : 'contact.html';
   });
-  setAttributeByConfig('[data-config-attr="href:emailHref"]', 'href', business.email ? `mailto:${business.email}` : '#quote-form');
+  document.querySelectorAll('[data-config-attr="href:whatsappHref"]').forEach((element) => {
+    element.href = whatsappHrefFromNumber(business.whatsapp);
+  });
+  setAttributeByConfig('[data-config-attr="href:emailHref"]', 'href', business.email ? `mailto:${business.email}` : 'contact.html');
   setAttributeByConfig('[data-config="facebookLink"]', 'href', business.facebookUrl || '#');
   setAttributeByConfig('[data-config="instagramLink"]', 'href', business.instagramUrl || '#');
 
@@ -208,7 +233,7 @@ const applyConfig = (config) => {
   setText('[data-config="heroEyebrow"]', hero.eyebrow || '');
   setText('[data-config="heroLede"]', hero.lede || '');
   setHtml('[data-config="heroPrimaryButton"]', `${hero.primaryButton || 'Contact us'} <span aria-hidden="true">↗</span>`);
-  setHtml('[data-config="heroSecondaryButton"]', `${hero.secondaryButton || 'Get in touch'} <span aria-hidden="true">↓</span>`);
+  setHtml('[data-config="heroSecondaryButton"]', `${hero.secondaryButton || 'Get in touch'} <span aria-hidden="true">↗</span>`);
   setText('[data-config="heroProofTitle"]', hero.proofTitle || '');
   setText('[data-config="heroProofBody"]', hero.proofBody || '');
   setText('[data-config="heroImageBadge"]', hero.imageBadge || business.brandInitial || '');
@@ -219,20 +244,27 @@ const applyConfig = (config) => {
   setText('[data-config="servicesEyebrow"]', servicesSection.eyebrow || '');
   setHtml('[data-config="servicesHeading"]', servicesSection.heading || '');
   setText('[data-config="servicesIntro"]', servicesSection.intro || '');
+  setText('[data-config="servicesPageEyebrow"]', servicesPage.eyebrow || '');
+  setHtml('[data-config="servicesPageHeading"]', servicesPage.heading || '');
+  setText('[data-config="servicesPageIntro"]', servicesPage.intro || '');
 
   (config.trustStrip || []).forEach((item, index) => {
-    const selector = `[data-config="trustStrip-${index}"]`;
-    const element = document.querySelector(selector);
+    const element = document.querySelector(`[data-config="trustStrip-${index}"]`);
     if (element) {
       element.innerHTML = `<span aria-hidden="true">✳</span> ${item}`;
     }
   });
 
+  (config.trustBadges || []).forEach((item, index) => {
+    const element = document.querySelector(`[data-config="trustBadge-${index}"]`);
+    if (element) {
+      element.innerHTML = `<span aria-hidden="true">✓</span> ${item}`;
+    }
+  });
+
   (config.services || []).forEach((service, index) => {
-    const titleSelector = `[data-config="service-title-${index}"]`;
-    const descSelector = `[data-config="service-description-${index}"]`;
-    const titleElement = document.querySelector(titleSelector);
-    const descElement = document.querySelector(descSelector);
+    const titleElement = document.querySelector(`[data-config="service-title-${index}"]`);
+    const descElement = document.querySelector(`[data-config="service-description-${index}"]`);
     if (titleElement) titleElement.textContent = service.title || '';
     if (descElement) descElement.textContent = service.description || '';
   });
@@ -241,15 +273,32 @@ const applyConfig = (config) => {
   setHtml('[data-config="aboutHeading"]', about.heading || '');
   setText('[data-config="aboutIntro"]', about.intro || '');
   setText('[data-config="aboutSupporting"]', about.supporting || '');
+  setText(
+    '[data-config="aboutOwnerLine"]',
+    [about.ownerName, about.ownerRole].filter(Boolean).join(' · '),
+  );
   setHtml('[data-config="aboutCta"]', `${about.cta || 'Tell us what you need'} <span aria-hidden="true">↗</span>`);
   setText('[data-config="aboutTagline"]', about.tagline || 'BUILT ON TRUST, NOT SHORTCUTS.');
   setHtml('[data-config="aboutExperienceYears"]', `${about.experienceYears || '15'}<span>${about.experienceSuffix || '+'}</span>`);
   setHtml('[data-config="aboutExperienceLabel"]', (about.experienceLabel || 'YEARS<br>ON THE TOOLS').replace('\n', '<br>'));
+  setText('[data-config="aboutStoryHeading"]', about.storyHeading || '');
+  setText('[data-config="aboutStory"]', about.story || '');
+  setText('[data-config="aboutQualificationsHeading"]', about.qualificationsHeading || '');
+  (about.qualifications || []).forEach((item, index) => {
+    const element = document.querySelector(`[data-config="aboutQualification-${index}"]`);
+    if (element) element.textContent = item;
+  });
+  setText('[data-config="aboutHowWeWorkHeading"]', about.howWeWorkHeading || '');
+  (about.howWeWork || []).forEach((item, index) => {
+    const title = document.querySelector(`[data-config="howWeWork-title-${index}"]`);
+    const description = document.querySelector(`[data-config="howWeWork-description-${index}"]`);
+    if (title) title.textContent = item.title || '';
+    if (description) description.textContent = item.description || '';
+  });
 
   setText('[data-config="areaEyebrow"]', area.eyebrow || 'Close by, ready to help');
   setHtml('[data-config="areaHeading"]', area.heading || '');
   setText('[data-config="areaDescription"]', area.description || '');
-  setText('[data-config="areaCta"]', `${area.cta || 'Check your postcode'} `);
   setHtml('[data-config="areaCta"]', `${area.cta || 'Check your postcode'} <span aria-hidden="true">↗</span>`);
   (area.list || []).forEach((item, index) => {
     const element = document.querySelector(`[data-config="area-item-${index}"]`);
@@ -260,9 +309,9 @@ const applyConfig = (config) => {
   setText('[data-config="workEyebrow"]', work.eyebrow || 'A few jobs, done right');
   setHtml('[data-config="workHeading"]', work.heading || 'The work speaks<br><em>for itself.</em>');
   setText('[data-config="workIntro"]', work.intro || '');
-  (work.items || []).forEach((item, index) => {
-    const category = document.querySelector(`[data-config="workItem-category-${index}"]`);
-    const title = document.querySelector(`[data-config="workItem-title-${index}"]`);
+  (config.beforeAfter || []).forEach((item, index) => {
+    const category = document.querySelector(`[data-config="beforeAfter-category-${index}"]`);
+    const title = document.querySelector(`[data-config="beforeAfter-title-${index}"]`);
     if (category) category.textContent = item.category || '';
     if (title) title.textContent = item.title || '';
   });
@@ -271,27 +320,50 @@ const applyConfig = (config) => {
   setHtml('[data-config="reviewsHeading"]', reviews.heading || 'Good people.<br><em>Good work.</em>');
   setText('[data-config="reviewsRating"]', reviews.rating || '5.0');
   setText('[data-config="reviewsRatingLabel"]', reviews.ratingLabel || '');
+  setText('[data-config="reviewsGoogleSummary"]', reviews.googleSummary || '');
   (reviews.items || []).forEach((item, index) => {
-    const quoteSelector = `[data-config="review-quote-${index}"]`;
-    const initialsSelector = `[data-config="review-initials-${index}"]`;
-    const nameSelector = `[data-config="review-name-${index}"]`;
-    const locationSelector = `[data-config="review-location-${index}"]`;
-    const quoteElement = document.querySelector(quoteSelector);
-    const initialsElement = document.querySelector(initialsSelector);
-    const nameElement = document.querySelector(nameSelector);
-    const locationElement = document.querySelector(locationSelector);
+    const quoteElement = document.querySelector(`[data-config="review-quote-${index}"]`);
+    const initialsElement = document.querySelector(`[data-config="review-initials-${index}"]`);
+    const nameElement = document.querySelector(`[data-config="review-name-${index}"]`);
+    const locationElement = document.querySelector(`[data-config="review-location-${index}"]`);
     if (quoteElement) quoteElement.textContent = `“${item.quote || ''}”`;
     if (initialsElement) initialsElement.textContent = item.initials || '';
     if (nameElement) nameElement.textContent = item.name || '';
     if (locationElement) locationElement.textContent = item.location || '';
   });
 
-  setText('[data-config="quoteEyebrow"]', quote.eyebrow || "Let's get it sorted");
-  setHtml('[data-config="quoteHeading"]', quote.heading || "Tell us what's<br><em>going on.</em>");
-  setText('[data-config="quoteDescription"]', quote.description || '');
+  setText('[data-config="homeCtaEyebrow"]', homeCta.eyebrow || '');
+  setHtml('[data-config="homeCtaHeading"]', homeCta.heading || '');
+  setText('[data-config="homeCtaDescription"]', homeCta.description || '');
+  setHtml('[data-config="homeCtaPrimaryButton"]', `${homeCta.primaryButton || 'Call now'} <span aria-hidden="true">↗</span>`);
+  setHtml('[data-config="homeCtaSecondaryButton"]', `${homeCta.secondaryButton || 'Request a free quote'} <span aria-hidden="true">↗</span>`);
+
+  setText('[data-config="quoteEyebrow"]', quote.eyebrow || contact.eyebrow || "Let's get it sorted");
+  setHtml('[data-config="quoteHeading"]', quote.heading || contact.heading || "Tell us what's<br><em>going on.</em>");
+  setText('[data-config="quoteDescription"]', quote.description || contact.description || '');
   setHtml('[data-config="quotePhone"]', `<span aria-hidden="true">☎</span> ${business.phoneDisplay || business.phone || 'Contact us'}`);
+  setHtml(
+    '[data-config="contactPhoneButton"]',
+    `<span aria-hidden="true">☎</span> Call ${business.phoneDisplay || business.phone || 'us'}`,
+  );
+  setText(
+    '[data-config="contactWhatsappButton"]',
+    `WhatsApp ${business.whatsappDisplay || ''}`.trim(),
+  );
   setText('[data-config="quoteSmallPrint"]', quote.smallPrint || 'Available 24 hours, every day');
   setText('[data-config="formNote"]', quote.formNote || "No obligation. We'll use your details to respond to your enquiry.");
+  setText('[data-config="contactHoursHeading"]', contact.hoursHeading || 'Opening hours');
+  (contact.hours || []).forEach((item, index) => {
+    const element = document.querySelector(`[data-config="contactHour-${index}"]`);
+    if (element) element.textContent = item;
+  });
+  setText('[data-config="contactFaqHeading"]', contact.faqHeading || 'Quick answers');
+  (contact.faq || []).forEach((item, index) => {
+    const question = document.querySelector(`[data-config="faq-question-${index}"]`);
+    const answer = document.querySelector(`[data-config="faq-answer-${index}"]`);
+    if (question) question.textContent = item.question || '';
+    if (answer) answer.textContent = item.answer || '';
+  });
 
   setHtml('[data-config="footerTagline"]', footer.tagline || '');
   setText('[data-config="footerGetInTouch"]', footer.getInTouchHeading || 'Get in touch');

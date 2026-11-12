@@ -3,10 +3,10 @@
     "main",
     "top",
     "available-services",
-    "about-us",
-    "service-area",
     "reviews",
-    "quote-form",
+    "trust-badges",
+    "service-area",
+    "home-cta",
     "footer"
   ],
   "minimumServiceCards": 1,

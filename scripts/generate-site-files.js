@@ -44,11 +44,23 @@ const updateMetadata = (filename, title, description) => {
   fs.writeFileSync(filepath, html);
 };
 
+const pageSeo = config.seo.pages || {};
 updateMetadata('index.html', config.seo.title, config.seo.description);
+updateMetadata('services.html', pageSeo.services.title, pageSeo.services.description);
+updateMetadata('about.html', pageSeo.about.title, pageSeo.about.description);
+updateMetadata('reviews.html', pageSeo.reviews.title, pageSeo.reviews.description);
+updateMetadata('contact.html', pageSeo.contact.title, pageSeo.contact.description);
 updateMetadata('privacy.html', config.privacy.title, config.privacy.description);
 updateMetadata('404.html', config.seo.notFoundTitle, config.seo.notFoundDescription);
 
-const sitemapUrls = [`${baseUrl}/`, `${baseUrl}/privacy.html`];
+const sitemapUrls = [
+  `${baseUrl}/`,
+  `${baseUrl}/services.html`,
+  `${baseUrl}/about.html`,
+  `${baseUrl}/reviews.html`,
+  `${baseUrl}/contact.html`,
+  `${baseUrl}/privacy.html`,
+];
 const sitemap = [
   '<?xml version="1.0" encoding="UTF-8"?>',
   '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
